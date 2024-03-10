@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leave Requests</title>
+</head>
+<body>
+    <h1>Leave Requests</h1>
+    <ul>
+        {% for leave_request in leave_requests %}
+            <li>{{ leave_request.start_date }} - {{ leave_request.end_date }}: {{ leave_request.reason }}</li>
+        {% empty %}
+            <li>No leave requests found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_leave_request' %}">Create Leave Request</a>
+</body>
+</html>

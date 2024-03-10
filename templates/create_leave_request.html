@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Leave Request</title>
+    <!-- Include CSS for the date picker -->
+    <link rel="stylesheet" href="path/to/datepicker.css">
+</head>
+<body>
+    <h1>Create Leave Request</h1>
+    <form action="{% url 'create_leave_request' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <!-- Include JavaScript for the date picker -->
+    <script src="path/to/datepicker.js"></script>
+    <script>
+        // Initialize date picker
+        $(document).ready(function() {
+            $('.datepicker').datepicker();
+        });
+    </script>
+</body>
+</html>
+
